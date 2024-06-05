@@ -119,7 +119,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     evmos: {
-      url: "http://173.249.25.82:8545",
+      url: "http://127.0.0.1/8545",
       accounts: [deployerPrivateKey],
       chainId: 9000,
     }
