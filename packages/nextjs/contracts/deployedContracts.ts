@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   1234: {
     YourCollectible: {
-      address: "0x23838BffEa0431d76Cf89ba3f841E9Db2DABb220",
+      address: "0x94316E7362Ac714568636cf5161688e5f56853D8",
       abi: [
         {
           inputs: [],
