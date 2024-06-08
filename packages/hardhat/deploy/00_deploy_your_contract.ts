@@ -1,6 +1,7 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { Contract } from "ethers";
+import { ethers } from "hardhat";
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and
@@ -19,11 +20,13 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     with a random private key in the .env file (then used on hardhat.config.ts)
     You can run the `yarn account` command to check your balance in every network.
   */
-  const { deployer } = await hre.getNamedAccounts();
+  // const { deployer } = await hre.getNamedAccounts();
+  const [ deployer ] = await ethers.getSigners();
+ 
   const { deploy } = hre.deployments;
 
   await deploy("YourCollectible", {
-    from: deployer,
+    from: deployer.address,
     // Contract constructor arguments
     args: [],
     log: true,
@@ -34,6 +37,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
   // Get the deployed contract to interact with it after deploying.
   const yourCollectible = await hre.ethers.getContract<Contract>("YourCollectible", deployer);
+  console.log("deploying contracts with the account ", deployer.address);
 };
 
 export default deployYourContract;

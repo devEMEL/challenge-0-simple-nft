@@ -30,7 +30,7 @@ const config: HardhatUserConfig = {
       },
     },
   },
-  defaultNetwork: "evmos",
+  defaultNetwork: "metawin",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -118,10 +118,10 @@ const config: HardhatUserConfig = {
       url: "https://sepolia.publicgoods.network",
       accounts: [deployerPrivateKey],
     },
-    evmos: {
-      url: "http://173.249.25.82:8545",
+    metawin: {
+      url: "http://185.188.249.133:8545",
       accounts: [deployerPrivateKey],
-      chainId: 9000,
+      chainId: 1234
     }
   },
   // configuration for harhdat-verify plugin
